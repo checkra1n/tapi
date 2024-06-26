@@ -1,6 +1,6 @@
-if(NOT APPLE)
-  message(FATAL_ERROR "Unsupported configuration.")
-endif()
+#if(NOT APPLE)
+#  message(FATAL_ERROR "Unsupported configuration.")
+#endif()
 
 set(TAPI_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(TAPI_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
