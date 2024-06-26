@@ -13,7 +13,7 @@ add_tapi_executable(tapi
   tapi.cpp
   )
 
-target_link_libraries(tapi
+target_link_libraries(tapi PRIVATE
   tapiDriver
   )
 
