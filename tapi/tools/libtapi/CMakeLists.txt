@@ -3,8 +3,14 @@ set(LLVM_LINK_COMPONENTS
   Support
   )
 
+if(LIBTAPI_BUILD_STATIC)
+  set(LIBTAPI_BUILD_TYPE STATIC)
+else()
+  set(LIBTAPI_BUILD_TYPE SHARED)
+endif()
+
 add_tapi_library(libtapi
-  SHARED
+  ${LIBTAPI_BUILD_TYPE}
   APIVersion.cpp
   LinkerInterfaceFile.cpp
   Version.cpp

@@ -141,7 +141,7 @@ macro(add_tapi_library name)
         ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX}
         RUNTIME DESTINATION bin)
 
-      if (${ARG_SHARED} AND NOT CMAKE_CONFIGURATION_TYPES)
+      if (NOT CMAKE_CONFIGURATION_TYPES)
         add_llvm_install_targets(install-${name}
                                  DEPENDS ${name}
                                  COMPONENT ${name})
@@ -185,6 +185,7 @@ include_directories(BEFORE
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
 
+option(LIBTAPI_BUILD_STATIC "Build libtapi static instead of shared." OFF)
 option(TAPI_INCLUDE_TESTS "Generate build targets for the TAPI unit tests."
        ${LLVM_INCLUDE_TESTS})
 option(TAPI_INCLUDE_DOCS "Generate build targets for the TAPI docs."
