@@ -32,6 +32,9 @@ add_tapi_library(tapiCore
   Utils.cpp
   YAMLReaderWriter.cpp
 
+  DEPENDS
+  vt_gen
+
   LINK_LIBS
   clangBasic
   tapiObjCMetadata
